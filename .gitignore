@@ -1,18 +1,42 @@
-# Object files
-*.o
-*.ko
+##################
+# Unity ignores:
+#
+# !!! WARNING !!!
+#
+<<<<<<< HEAD
+# � you MUST convert Unity to using Metafiles *before* you start using this .gitignore file,
+=======
+# … you MUST convert Unity to using Metafiles *before* you start using this .gitignore file,
+>>>>>>> 7054b340515ac737bd87f09b84e52cdf4c42f671
+# or you WILL lose data!
+#
+#####
+#
+# !!! WARNING !!!
+#
+<<<<<<< HEAD
+# � don�t forget to [git add "*"] (quotes are required!) when adding new files, or git will silently ignore them
+=======
+# … don’t forget to [git add "*"] (quotes are required!) when adding new files, or git will silently ignore them
+>>>>>>> 7054b340515ac737bd87f09b84e52cdf4c42f671
+#
 
-# Libraries
-*.lib
-*.a
+# OS X only (not needed on other platforms)
+.DS_Store
+*.swp
+*.Trashes
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
+# All platforms
+Library
+Temp
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.apk
+*.psd
+<<<<<<< HEAD
+*.userprefs
+=======
+*.userprefs
+>>>>>>> 7054b340515ac737bd87f09b84e52cdf4c42f671
