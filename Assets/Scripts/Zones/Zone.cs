@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Zone : MonoBehaviour {
 
+	public int ResourceAmount;
+
 	private int _teamOwner;
 
 	// Use this for initialization
@@ -40,10 +42,10 @@ public class Zone : MonoBehaviour {
 	
 	void SendToZoneController(int zone){
 		if(zone == 0){
-			EventManager.TriggerZoneEvent(new ZoneEventArgs(ZoneEnum.GainZone,1));
+			EventManager.TriggerZoneEvent(new ZoneEventArgs(ZoneEnum.GainZone,1, 1));
 		}
 		else if(zone == 1){
-			EventManager.TriggerZoneEvent(new ZoneEventArgs(ZoneEnum.LoseZone,1));
+			EventManager.TriggerZoneEvent(new ZoneEventArgs(ZoneEnum.LoseZone,1, 1));
 		}
 
 	}

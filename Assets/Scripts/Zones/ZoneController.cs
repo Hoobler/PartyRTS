@@ -4,9 +4,11 @@ using System.Collections;
 public class ZoneController : MonoBehaviour {
 
 	private int _zones;
+	private int[] _array;
 
 	// Use this for initialization
 	void Start () {
+		_array = new int[4];
 		EventManager.OnZoneEvent += EventRespons;
 	}
 	
@@ -17,14 +19,14 @@ public class ZoneController : MonoBehaviour {
 	
 	void EventRespons(ZoneEventArgs derp){
 		if(derp.ZoneState == ZoneEnum.GainZone){
-			_zones++;
+			_array[derp.Team]++;
 		}
 		else if(derp.ZoneState == ZoneEnum.LoseZone){
-			_zones--;
+			_array[derp.Team]--;
 		}
 		else if(derp.ZoneState == ZoneEnum.NeutralZone){
 		
 		}
-		Debug.Log("Zones controlled: " + _zones);
+		Debug.Log("Zones controlled: " + _array[derp.Team]);
 	}
 }
