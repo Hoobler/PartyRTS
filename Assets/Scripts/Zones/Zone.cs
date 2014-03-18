@@ -14,9 +14,23 @@ public class Zone : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	//Test Stuff tabort senare
+	void OnMouseDown(){
+		Debug.Log("Mouse clocl");
+		ZoneControll();
+	}
 	
 	void OnTriggerEnter(){
 		
+	}
+
+	void ZoneControll(){
+		if(_teamOwner != 1){
+			_teamOwner = 1;
+			renderer.material.color = Color.red;
+			SendToZoneController();
+		}
 	}
 	
 	void SendToZoneController(){
