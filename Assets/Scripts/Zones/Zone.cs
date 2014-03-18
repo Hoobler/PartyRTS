@@ -17,23 +17,34 @@ public class Zone : MonoBehaviour {
 
 	//Test Stuff tabort senare
 	void OnMouseDown(){
-		Debug.Log("Mouse clocl");
-		ZoneControll();
+		Debug.Log("Mouse left click");
+		ZoneControll(0);
 	}
 	
 	void OnTriggerEnter(){
 		
 	}
 
-	void ZoneControll(){
+	void ZoneControll(int derp){
 		if(_teamOwner != 1){
 			_teamOwner = 1;
 			renderer.material.color = Color.red;
-			SendToZoneController();
+			SendToZoneController(0);
+		}
+		else if(_teamOwner == 1){
+			_teamOwner = -1;
+			renderer.material.color = Color.white;
+			SendToZoneController(1);
 		}
 	}
 	
-	void SendToZoneController(){
-		EventManager.TriggerZoneEvent(new ZoneEventArgs(ZoneEnum.GainZone,1));
+	void SendToZoneController(int zone){
+		if(zone == 0){
+			EventManager.TriggerZoneEvent(new ZoneEventArgs(ZoneEnum.GainZone,1));
+		}
+		else if(zone == 1){
+			EventManager.TriggerZoneEvent(new ZoneEventArgs(ZoneEnum.LoseZone,1));
+		}
+
 	}
 }

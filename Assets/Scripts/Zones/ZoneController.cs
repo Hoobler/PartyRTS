@@ -20,7 +20,7 @@ public class ZoneController : MonoBehaviour {
 			_zones++;
 		}
 		else if(derp.ZoneState == ZoneEnum.LoseZone){
-		
+			_zones--;
 		}
 		else if(derp.ZoneState == ZoneEnum.NeutralZone){
 		
